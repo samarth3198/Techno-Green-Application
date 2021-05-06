@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head> 
+		<meta charset= "utf-8">
+		<meta name="viewport" 
+		content = "width = device-width , initial-scale=1.0">
+	<title> Techno Green </title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	</head>
+
+<body>
+    <%- include ('./header.ejs') %>
+    <%- include ('./navigation.ejs') %>
+
+    <!-- <section class="mainpart"> -->
+        <div class="content">
+            <p id="error"> <% if(errors.length >=1) { %> 
+                <% for(var i=0; i < errors.length; i++) { %>
+                <%= errors[i].msg %>
+            <% } %>
+            <% } %>
+            </p>
+         <div>
+            <form class="newconnect" action="/addConnection" method="POST">
+                <label for = "topic">Topic </label>
+                <input type= "text" id="topic" name="topic"><br><br>
+                <label for = "name"> Name </label> 
+                <input type= "text" id="name" name="name"><br><br>
+                <label for ="details">Details </label>
+                <input type="text" id="details" name="details" rows="5" cols="40"><br><br>
+                <label for = "location"> Time </label> 
+                <input type= "text" id="time" name="time"><br><br>
+                <label for = "date"> Date </label> 
+                <input type= "text" id="date" name="date"><br><br>
+
+                <input type = "submit" value="Create Connection"> 
+            </form>
+         </div>
+        </div>
+    <!-- </section> -->
+    <%- include ('./footer.ejs') %>
+</body>
+</html>

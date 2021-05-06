@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head> 
+		<meta charset= "utf-8">
+		<meta name="viewport" 
+		content = "width = device-width , initial-scale=1.0">
+	<title>Techno Green</title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	</head>
+
+	<body>
+        <%- include ('./header.ejs') %>
+        <%- include ('./navigation.ejs') %>
+
+		<section class="mainpart">
+
+			<div class="content">
+				<div class="box">
+					<div class="hostuser">
+						<h1 class="heading"><%= events.Name %></h1>
+						<div class="General-Info">
+							<p>Topic: <%= events.topic %></p>
+							<p>Details: <%= events.details %></p>
+							<p>Date: <%= events.date %></p>
+							<p>Time: <%= events.time %></p>
+						</div>
+					</div>
+
+					<h1 class="heading">Details</h1>		
+					<div class="General-Info">
+						<p>Please RSVP for the event. Bring your valid photo I'd and laptop with you.</p>
+					</div>
+				</div>
+				<div class="textcontent">
+					<div class="people">	
+						<p>Are you going?</p>
+						<button class="yes" onclick="window.location.href='/savedConnections/save?meetupId=<%= events.Id %>&rsvp=Yes'">Yes</button>
+						<button class="no" onclick="window.location.href='/savedConnections/save?meetupId=<%= events.Id %>&rsvp=No'">No</button>
+					</div>
+				</div>
+			</div>
+        </section>
+        <%- include ('./footer.ejs') %>
+	</body>
+</html>			

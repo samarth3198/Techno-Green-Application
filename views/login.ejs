@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head> 
+		<meta charset= "utf-8">
+		<meta name="viewport" 
+		content = "width = device-width , initial-scale=1.0">
+	<title> Techno Green </title>
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	</head>
+
+<body>
+    <%- include ('./header.ejs') %>
+    <%- include ('./navigation.ejs') %>
+    <div class="content">
+        <h3>Login form</h3>
+        <p id="error">  <% if(errors.length >= 1) { %>
+            <% for(var i = 0; i < errors.length ; i++) { %>
+            <%= errors[i].msg %>
+        <% } %>
+         <% } %>
+        </p>
+        <br>
+        <br>
+        <br>
+            <p> Please enter username and password to signin</p>
+            <form action="/savedConnections/login">
+            <label for = "username">username </label>
+            <input type = "text" id="username" name="username"> <br><br>
+            <label for = "password">password </label>
+            <input type = "password" id="password" name="password"> <br><br>
+
+            <input type = "submit" id ="action" name= "action" value="Login">
+        </form>
+    </div>
+    <%- include ('./footer.ejs') %>
+</body>
+</html>

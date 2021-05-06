@@ -1,0 +1,21 @@
+<header class="header-part">
+    <div class = "header-subpart">
+      <div class="header-leftside">
+          <a href="/index">
+              <img class="board" alt="Techno Green logo" src="../images/Techno_Green.jpg" />
+          </a>
+      </div>
+
+      <div class="header-rightside">
+        <a href="/newConnection">Start a new connection</a>
+            <% if(loggedIn) { %>
+                <a href="/savedConnections/myConnections">My Connections</a>
+                <a href="/savedConnections/signout">Sign Out</a>
+            <% } else { %>
+                <a href="/login">Login</a>
+                <a href="/login">Sign Up</a>
+            <% } %>
+      </div>
+      <div class="down-navi"></div>
+    </div>
+</header>	
